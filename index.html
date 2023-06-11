@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Lab 6</title>
+    <link rel="icon" type="image/png" href="COMP3801_RGB_cube.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Common/webgl-utils-2.js" type="text/javascript"></script>
+    <script src="Common/initShaders2.js" type="text/javascript"></script>
+    <script src="Common/MV.js" type="text/javascript"></script>
+    <script src="Cube.js" type="text/javascript"></script>
+    <script src="Texture.js" type="text/javascript"></script>
+  </head>
+  <body onload="new Texture('gl-canvas')">
+    <div align="center">
+      <canvas id="gl-canvas" width="500" height="500">
+        This browser doesn't support the HTML5 canvas element
+      </canvas>
+      <table border=1>
+        <tr style="background-color: lightgray; color: black">
+          <td><input id="gl-canvas-long-slider" type="range" min="-180" max="180" value="0"  step="1" style="width:200px" /></td>
+          <td>Camera Longitude</td>
+          <td id="gl-canvas-long-value" style="width: 60px; text-align: right">0.00</td>
+        </tr>
+        <tr style="background-color: lightgray; color: black">
+          <td><input id="gl-canvas-lat-slider" type="range" min="-90" max="90" value="0"  step="1" style="width:200px" /></td>
+          <td>Camera Latitude</td>
+          <td id="gl-canvas-lat-value" style="width: 60px; text-align: right">0.00</td>
+        </tr>
+        <tr style="background-color: lightgray; color: black">
+          <td><input id="gl-canvas-rad-slider" type="range" min="0" max="8" value="4"  step="0.01" style="width:200px" /></td>
+          <td>Camera Radius</td>
+          <td id="gl-canvas-rad-value" style="width: 60px; text-align: right">4</td>
+        </tr>
+        
+      </table>
+      <div style="font-family: sans-serif">
+        Colors on/off<input type="checkbox" id="gl-canvas-color" /><br />
+        Textures on/off<input type="checkbox" id="gl-canvas-texture" /><br />
+      </div>
+         <div>
+          MAG_FILTER:
+          <input type="radio" name="gl-canvas-mag-filter" id="magNearest" checked /> NEAREST
+          <input type="radio" name="gl-canvas-mag-filter" id="magLinear" /> LINEAR
+         
+        </div>
+        <div>
+          MIN_FILTER:
+          <input type="radio" name="gl-canvas-min-filter" id="minNearest" checked /> NEAREST
+          <input type="radio" name="gl-canvas-min-filter" id="minLinear" /> LINEAR
+          <input type="radio" name="gl-canvas-min-filter" id="minLinearMipLinear" /> LINEAR_MIPMAP_LINEAR
+      
+     
+        </div>
+      
+    </div>
+  </body>
+</html>
